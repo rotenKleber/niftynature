@@ -1,36 +1,16 @@
 #include <stdio.h>
 #include "organism.hpp"
 #include "consts.hpp"
-#include <vector>
+#include "game.hpp"
 
 int main() {
+	Game game(20, 20);
 
 	srand(time(NULL));
+	
+	int code[nTraits] = {1, 1, 1};
 
-	vector<Organism*> organisms;
-
-	organisms.push_back();
-
-	Organism org3 = Organism::repopulate(org, org2);
-
-	for(int i = 0; i < nTraits; i++) {
-		printf("%i", org.getCode()[i]);
-	}
-	printf("\n");
-
-	for(int i = 0; i < nTraits; i++) {
-		printf("%i", org2.getCode()[i]);
-	}
-	printf("\n");
-
-	for(int i = 0; i < nTraits; i++) {
-		printf("%i", org3.getCode()[i]);
-	}
-	printf("\n");
-
-	for(int i = 0; i < organisms.size(); i++) {
-		delete organisms[i];
-	}
-
+	game.organisms.push_back(new Organism(code));
+	
 	return 0;
 }

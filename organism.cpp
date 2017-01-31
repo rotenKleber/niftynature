@@ -1,7 +1,10 @@
 #include "organism.hpp"
 #include "consts.hpp"
 
-Organism::Organism(int code[nTraits]) {
+Organism::Organism(int code[nTraits]):
+	x(0),
+	y(0)
+{
 	// Setting m_code equal to code
 	m_code[nTraits];
 

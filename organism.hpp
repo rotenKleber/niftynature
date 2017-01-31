@@ -23,6 +23,8 @@ private:
 	unsigned int m_energy;
 	unsigned int m_health;
 	unsigned int m_combat;
+	
+	int x, y;
 };
 
 #endif

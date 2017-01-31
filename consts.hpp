@@ -18,4 +18,8 @@ enum food {cellulose = 0, plant = 1, meat = 2};
 
 const unsigned int nTraits = 3;
 
+// Map stuff
+
+enum terrain {dirt, stone, grass};
+
 #endif
