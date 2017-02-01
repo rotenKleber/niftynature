@@ -2,8 +2,8 @@
 #include "consts.hpp"
 
 Organism::Organism(int code[nTraits]):
-	x(0),
-	y(0)
+	m_x(0),
+	m_y(0)
 {
 	// Setting m_code equal to code
 	m_code[nTraits];
@@ -55,4 +55,9 @@ void Organism::eat(const food &type, const int &rawEnergy) {
 	} else {
 		m_energy += rawEnergy * .1;
 	}
+}
+
+void Organism::move(const int &x, const int &y) {
+	m_x += x;
+	m_y += y;
 }

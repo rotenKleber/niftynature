@@ -4,7 +4,7 @@
 #include "game.hpp"
 
 int main() {
-	Game game(20, 20);
+	Game game;
 
 	srand(time(NULL));
 	

@@ -17,6 +17,7 @@ public:
 
 	bool takeTurn();
 	void eat(const food &type, const int &rawEnergy);
+	void move(const int &x, const int &y);
 
 private:
 	int m_code[nTraits];
@@ -24,7 +25,7 @@ private:
 	unsigned int m_health;
 	unsigned int m_combat;
 	
-	int x, y;
+	int m_x, m_y;
 };
 
 #endif

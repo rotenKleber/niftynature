@@ -7,8 +7,10 @@
 
 class Game {
 public:
-	Game(int w, int h);
+	Game();
 	~Game();
+	
+	void takeTurn();
 	
 	terrain map [20][20][3];
 	list<Organism*> organisms;	
