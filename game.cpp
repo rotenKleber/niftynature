@@ -1,23 +1,31 @@
 #include "game.hpp"
 
-Game::Game() {
-	for(int xx = 0; xx < width; xx++) {
-		for(int yy = 0; yy < height; yy++) {
-			map[xx][yy][0] = dirt;
-			map[xx][yy][1] = grass;
+Game::Game() 
+{
+	for(int xx = 0; xx < MAP_W; xx++)
+	{
+		for(int yy = 0; yy < MAP_H; yy++)
+		{
+			map[xx][yy] = grass;
 		}
 	}
 }
 
-void Game::takeTurn() {
-	// Loops through every organism and updates them
-	for(auto it = organisms.begin(); it != organisms.end(); it++) {
-		delete *it;
+void Game::takeTurn() 
+{
+	for(auto it = organisms.begin(); it != organisms.end(); it++)
+	{
+		int dX = irandom(-1, 1);
+		int dY = irandom(-1, 1);
+		
+		(*it)->move(dX, dY);
 	}
 }
 
-Game::~Game() {
-	for(auto it = organisms.begin(); it != organisms.end(); it++) {
+Game::~Game()
+{
+	for(auto it = organisms.begin(); it != organisms.end(); it++)
+	{
 		delete *it;
 	}
 };

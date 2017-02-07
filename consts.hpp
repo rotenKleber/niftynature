@@ -22,4 +22,7 @@ const unsigned int nTraits = 3;
 
 enum terrain {dirt, stone, grass};
 
+#define MAP_W 20
+#define MAP_H 20
+
 #endif

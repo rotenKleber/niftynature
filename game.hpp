@@ -5,16 +5,16 @@
 #include "organism.hpp"
 #include <list>
 
-class Game {
+class Game
+{
 public:
 	Game();
 	~Game();
 	
 	void takeTurn();
 	
-	terrain map [20][20][3];
-	list<Organism*> organisms;	
-	int width, height;
+	terrain map [MAP_W][MAP_H];
+	list<Organism*> organisms;		
 };
 
 #endif
