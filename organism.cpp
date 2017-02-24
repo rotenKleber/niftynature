@@ -3,7 +3,9 @@
 
 Organism::Organism(int code[nTraits]):
 	m_x(0),
-	m_y(0)
+	m_y(0),
+	m_maxEnergy(100),
+	m_energy(100)
 {
 	// Setting m_code equal to code
 	m_code[nTraits];
@@ -44,6 +46,19 @@ Organism Organism::repopulate(Organism &org1, Organism &org2)
 	return offspring;
 }
 
+bool Organism::isHungry() const
+{
+	// Returns true if energy is below 80%
+	if (m_energy < float (m_maxEnergy * 4 / 5))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 bool Organism::takeTurn()
 {
 	int totalTaken = 0;
@@ -72,4 +87,6 @@ void Organism::move(const int &x, const int &y)
 {
 	m_x += x;
 	m_y += y;
+
+	//m_energy -= 5;
 }

@@ -15,9 +15,11 @@ public:
 	Graphics(int w, int h);
 	~Graphics();
 	
-	bool update(terrain (&map)[MAP_W][MAP_H], list<Organism*> &organisms);
+	bool update(terrain (&map)[MAP_W][MAP_H][2], list<Organism*> &organisms);
 	
 private:
+	int camX, camY;
+
 	sf::RenderWindow window;
 	
 	sf::RectangleShape tile;

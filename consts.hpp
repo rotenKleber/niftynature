@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <cstdlib>
+#include <math.h>
 
 using namespace std;
 
@@ -20,9 +21,13 @@ const unsigned int nTraits = 3;
 
 // Map stuff
 
-enum terrain {dirt, stone, grass};
+enum terrain {none, dirt, stone, grass};
 
 #define MAP_W 20
 #define MAP_H 20
+#define TILE_W 64
+#define TILE_H 64
+#define SCREEN_W 1024
+#define SCREEN_H 768
 
 #endif

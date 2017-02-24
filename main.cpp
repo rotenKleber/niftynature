@@ -8,30 +8,30 @@
 int main()
 {
 	Game game;
-	Graphics graphics(640, 480);
-
-	srand(time(NULL));
+	Graphics graphics(SCREEN_W, SCREEN_H);
 	
 	int code[nTraits] = {1, 1, 1};
-	Organism* org = new Organism(code);
 	
-	org->setPosition(5, 5);
-
-	game.organisms.push_back(org);
-	
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 1; i++)
 	{
-		game.organisms.push_back(new Organism(code));
+		Organism* org = new Organism(code);
+			
+		org->setPosition(5, 5);
+		
+		org->setTarget(10, 10);
+		org->setHasTarget(true);
+
+		game.organisms.push_back(org);	
 	}
 
-	int framesUntilTurn = 30;
+	int framesUntilTurn = 5;
 	
 	while(graphics.update(game.map, game.organisms))
 	{
 		framesUntilTurn--;
 		if(framesUntilTurn == 0)
 		{
-			framesUntilTurn = 30;
+			framesUntilTurn = 5;
 			
 			game.takeTurn();
 		}
