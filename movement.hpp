@@ -9,7 +9,7 @@ public:
 	Movement(cardinal a, cardinal s);
 	cardinal attempted;
 	cardinal substituted;
-
+	
 };
 
 #endif

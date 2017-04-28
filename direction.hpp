@@ -6,8 +6,9 @@ enum cardinal {CENTRE, RIGHT, UP, LEFT, DOWN};
 class Direction
 {
 public:	
-	static cardinal getParallel(cardinal dir);
+	static cardinal getRandParallel(cardinal dir);
 	static cardinal getOpposite(cardinal dir);
+	static cardinal getBestParallel(cardinal dir, int delta);
 	static int dec(cardinal dir);
 };
 

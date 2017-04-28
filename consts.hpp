@@ -23,11 +23,14 @@ const unsigned int nTraits = 3;
 
 enum terrain {none, dirt, stone, grass};
 
+enum job {eat, fight, mate, rout};
+
 #define MAP_W 20
-#define MAP_H 20
+#define MAP_H 10
 #define TILE_W 64
 #define TILE_H 64
 #define SCREEN_W 1024
 #define SCREEN_H 768
+#define OFFSET_Y 128
 
 #endif

@@ -1,7 +1,7 @@
 #include "direction.hpp"
 #include "consts.hpp"
 
-cardinal Direction::getParallel(cardinal dir)
+cardinal Direction::getRandParallel(cardinal dir)
 {
 	switch(dir)
 	{
@@ -38,6 +38,28 @@ cardinal Direction::getOpposite(cardinal dir)
 	break;
 	case DOWN:
 		return UP;
+	break;
+	default:
+		return CENTRE;
+	break;
+	}
+}
+
+cardinal Direction::getBestParallel(cardinal dir, int delta)
+{
+	switch(dir)
+	{
+	case LEFT:
+	case RIGHT:
+	
+	return (delta < 0 ? UP : DOWN);
+	
+	break;
+	case UP:
+	case DOWN:
+	
+	return (delta > 0 ? RIGHT : LEFT);
+	
 	break;
 	default:
 		return CENTRE;

@@ -5,7 +5,7 @@ Organism::Organism(int code[nTraits]):
 	m_x(0),
 	m_y(0),
 	m_maxEnergy(100),
-	m_energy(100)
+	m_energy(90)
 {
 	// Setting m_code equal to code
 	m_code[nTraits];
@@ -30,6 +30,14 @@ Organism::Organism()
 
 	m_health = 10*m_code[bodySize];
 	m_combat = 3*m_code[stomachType];
+}
+
+Organism::~Organism()
+{
+	for(auto i = orders.begin(); i < orders.end(); i++)
+	{
+		delete(*i);
+	} 
 }
 
 Organism Organism::repopulate(Organism &org1, Organism &org2)
@@ -65,6 +73,10 @@ bool Organism::takeTurn()
 
 	totalTaken += 5*m_code[bodySize];
 	totalTaken += 3*m_code[legSize];
+	
+	totalTaken /= 5;
+	
+	m_energy -= totalTaken;
 }
 
 void Organism::eat(const food &type, const int &rawEnergy)
@@ -88,5 +100,5 @@ void Organism::move(const int &x, const int &y)
 	m_x += x;
 	m_y += y;
 
-	//m_energy -= 5;
+	m_energy -= 1 * m_code[bodySize];
 }
